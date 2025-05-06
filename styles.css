@@ -365,6 +365,7 @@
   .about-text h3 {
     color: var(--primary);
     margin-bottom: 1.5rem;
+    align-items: center;
   }
   
   .about-info {
@@ -372,6 +373,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin: 2rem 0;
+    align-items: center;
   }
   
   .info-item {
