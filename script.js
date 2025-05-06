@@ -20,33 +20,17 @@ const navLinks = document.querySelector('.nav-links');
 if (mobileMenuButton) {
   mobileMenuButton.addEventListener('click', () => {
     navLinks.classList.toggle('show');
-    
-    // Toggle hamburger/close icon
-    const spans = mobileMenuButton.querySelectorAll('span');
-    if (navLinks.classList.contains('show')) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-    } else {
-      spans[0].style.transform = 'none';
-      spans[1].style.opacity = '1';
-      spans[2].style.transform = 'none';
-    }
+    mobileMenuButton.classList.toggle('open');
   });
 }
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-  if (navLinks.classList.contains('show') && 
-      !navLinks.contains(e.target) && 
+  if (navLinks.classList.contains('show') &&
+      !navLinks.contains(e.target) &&
       !mobileMenuButton.contains(e.target)) {
     navLinks.classList.remove('show');
-    
-    // Reset hamburger icon
-    const spans = mobileMenuButton.querySelectorAll('span');
-    spans[0].style.transform = 'none';
-    spans[1].style.opacity = '1';
-    spans[2].style.transform = 'none';
+    mobileMenuButton.classList.remove('open');
   }
 });
 
@@ -56,16 +40,12 @@ const navItems = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
   let current = '';
-  
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    
     if (window.scrollY >= sectionTop - 200) {
       current = section.getAttribute('id');
     }
   });
-  
   navItems.forEach((item) => {
     item.classList.remove('active');
     if (item.getAttribute('href') === `#${current}`) {
@@ -85,7 +65,6 @@ const animateProgressBars = () => {
   });
 };
 
-// Animate skills when they come into view
 const skillsObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -146,11 +125,9 @@ if (typingText) {
     }
     
     if (!isDeleting && charIndex === currentPhrase.length) {
-      // Pause at the end of typing
       isDeleting = true;
       typeSpeed = 1000;
     } else if (isDeleting && charIndex === 0) {
-      // Move to next phrase
       isDeleting = false;
       phraseIndex = (phraseIndex + 1) % phrases.length;
       typeSpeed = 500;
