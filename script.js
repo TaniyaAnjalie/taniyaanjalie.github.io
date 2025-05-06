@@ -121,10 +121,10 @@ backToTopBtn.addEventListener('click', () => {
 const typingText = document.querySelector('.typing-text');
 if (typingText) {
   const phrases = [
-    'I create smart digital solutions.',
-    'I develop Android applications.',
-    'I maintain and design websites.',
-    'I explore creative IT solutions.'
+    'Create smart digital solutions.',
+    'Develop Android applications.',
+    'Maintain and design websites.',
+    'Explore creative IT solutions.'
   ];
   
   let phraseIndex = 0;
