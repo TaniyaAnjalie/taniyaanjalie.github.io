@@ -316,8 +316,6 @@
   }
   
   .hero-image img {
-    width: 50%;
-    height: 50%;
     border-radius: 1rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
