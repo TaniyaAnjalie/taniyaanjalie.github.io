@@ -77,10 +77,10 @@ function initializeTypeEffect() {
   if (!typingText) return;
 
   const phrases = [
-    'Build things for the web.',
-    'Create web applications.',
-    'Design user interfaces.',
-    'Develop mobile apps.'
+    'Build things for the web',
+    'Create web applications',
+    'Design user interfaces',
+    'Develop mobile apps'
   ];
 
   let currentPhraseIndex = 0;
