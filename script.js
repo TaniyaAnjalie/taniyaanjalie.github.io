@@ -75,52 +75,48 @@ function initializeNavbar() {
 function initializeTypeEffect() {
   const typingText = document.querySelector('.typing-text');
   if (!typingText) return;
-  
+
   const phrases = [
     'Build things for the web.',
     'Create web applications.',
     'Design user interfaces.',
     'Develop mobile apps.'
   ];
-  
+
   let currentPhraseIndex = 0;
   let currentCharIndex = 0;
   let isDeleting = false;
   let typingSpeed = 100;
-  
+
   function typeEffect() {
     const currentPhrase = phrases[currentPhraseIndex];
-    
+
     if (isDeleting) {
-      // Deleting text
       typingText.textContent = currentPhrase.substring(0, currentCharIndex - 1);
       currentCharIndex--;
       typingSpeed = 50;
     } else {
-      // Typing text
       typingText.textContent = currentPhrase.substring(0, currentCharIndex + 1);
       currentCharIndex++;
       typingSpeed = 100;
     }
-    
-    // Check if word is complete
+
     if (!isDeleting && currentCharIndex === currentPhrase.length) {
-      // Pause at end of word
       isDeleting = true;
       typingSpeed = 1500;
     } else if (isDeleting && currentCharIndex === 0) {
-      // Move to next word
       isDeleting = false;
       currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
       typingSpeed = 500;
     }
-    
+
     setTimeout(typeEffect, typingSpeed);
   }
-  
-  // Start the typing effect
+
+  // Start the typing animation
   setTimeout(typeEffect, 1000);
 }
+
 
 // Projects Slider
 function initializeSlider() {
