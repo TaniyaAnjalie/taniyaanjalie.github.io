@@ -3,7 +3,7 @@
   --primary-color: #3572EF;
   --primary-light: #3ABEF9;
   --primary-lighter: #A7E6FF;
-  --typing-color: #41CAFB;
+  --typing-color: #8adcfa;
   --bg-dark: #0F172A;
   --bg-darker: #0a1020;
   --text-light: #E2E8F0;
@@ -1058,7 +1058,6 @@ a:hover {
   }
   
   .typing-text {
-    color: #41CAFB;
     font-size: 1.5rem;
   }
   
