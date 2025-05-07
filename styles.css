@@ -455,8 +455,7 @@ a:hover {
 }
 
 .project-card {
-  /* width: 50%; */
-  min-width: calc(50% - 2rem);
+  width: 50%;
   height: 50%;
   margin: 0 1rem;
   background-color: var(--card-bg);

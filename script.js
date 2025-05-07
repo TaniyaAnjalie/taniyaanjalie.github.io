@@ -140,7 +140,7 @@ function initializeSlider() {
     } else if (window.innerWidth < 992) {
       return 2;
     } else {
-      return 2;
+      return 1;
     }
   }
   
